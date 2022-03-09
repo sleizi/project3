@@ -26,10 +26,10 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push sleizi/udagram-api-feed:v1
+  - docker push sleizi/udagram-api-feed:latest
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push sleizi/udagram-api-user:v1
+  - docker push sleizi/udagram-api-user:latest
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push sleizi/udagram-frontend:v1
+  - docker push sleizi/udagram-frontend:latest
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push sleizi/reverseproxy:v1
+  - docker push sleizi/reverseproxy:latest
