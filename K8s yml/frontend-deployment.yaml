@@ -18,6 +18,7 @@ spec:
         - image: sleizi/udagram-frontend
           name: frontend
           imagePullPolicy: Always
+          
           resources:
             requests:
               memory: "64Mi"
@@ -34,4 +35,4 @@ spec:
       volumes:
         - name: aws-secret
           secret:
-            secretName: aws-secret
+            secretName: aws-secret      
