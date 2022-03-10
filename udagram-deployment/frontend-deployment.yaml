@@ -15,24 +15,23 @@ spec:
         service: frontend
     spec:
       containers:
-        - image: sleizi/udagram-frontend
-          name: frontend
-          imagePullPolicy: Always
-          
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "1024Mi"
-              cpu: "500m"
-          
-          volumeMounts:
-            - name: aws-secret
-              mountPath: "/root/.aws/"
-              readOnly: true
+      - image: sleizi/udagram-api-user
+        name: frontend
+        imagePullPolicy: Always  
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"                  
+     
+        volumeMounts:
+        - name: aws-secret
+          mountPath: "/root/.aws/"
+          readOnly: true        
       restartPolicy: Always
       volumes:
-        - name: aws-secret
-          secret:
-            secretName: aws-secret      
+      - name: aws-secret
+        secret:
+          secretName: aws-secret  
